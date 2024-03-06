@@ -146,6 +146,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: Lato, sans-serif;
+  color: var(--text-color);
 }
 
 a {
@@ -157,6 +158,18 @@ button {
   border: none;
   outline: none;
   background: transparent;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
+.icon {
+  filter: var(--icon-color);
 }
 
 .row > *, .container-fluid, .container {
@@ -1190,13 +1203,36 @@ button {
     --grid-gutter-y: 90px;
   }
 }
+html.dark {
+  --text-color: #fff;
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7%)
+    hue-rotate(199deg) brightness(102%) contrast(100%);
+  --header-bg-color: #171c28;
+  --top-act-group-bg-color: #292e39;
+  --top-act-group-shadow-color: rgba(0, 0, 0, 0.2);
+  --top-act-group-separate-color: #ededf6;
+}
+
+html {
+  --text-color: #1a162e;
+  --icon-color: brightness(0) saturate(100%) invert(9%) sepia(27%)
+    saturate(1207%) hue-rotate(210deg) brightness(95%) contrast(98%);
+  --header-bg-color: #eee;
+  --top-act-group-bg-color: #fff;
+  --top-act-group-shadow-color: rgba(237, 237, 246, 0.2);
+  --top-act-group-separate-color: #ededf6;
+}
+
+.top-act__btn, .top-act, .top-bar {
+  display: flex;
+  align-items: center;
+}
+
 .header {
-  background-color: #eee;
+  background-color: var(--header-bg-color);
 }
 
 .top-bar {
-  display: flex;
-  align-items: center;
   padding: 30px 0;
 }
 
@@ -1218,8 +1254,6 @@ button {
 }
 
 .top-act {
-  display: flex;
-  align-items: center;
   gap: 20px;
 }
 .top-act__group {
@@ -1228,17 +1262,16 @@ button {
   min-width: 50px;
   height: 50px;
   border-radius: 8px;
-  background: #fff;
-  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+  background: var(--top-act-group-bg-color);
+  box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow-color);
 }
 .top-act__group--single .top-act__btn {
   padding: 13px;
 }
 .top-act__btn {
-  display: flex;
-  align-items: center;
   gap: 10px;
   padding: 13px 20px;
+  cursor: pointer;
 }
 .top-act__title {
   font-size: 1.5rem;
@@ -1249,13 +1282,14 @@ button {
 .top-act__separate {
   width: 1px;
   height: 30px;
-  background: #ededf6;
+  background: var(--top-act-group-separate-color);
 }
 .top-act__avatar {
   display: block;
   width: 50px;
   height: 50px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .logo {
