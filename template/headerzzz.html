@@ -1,20 +1,45 @@
 <div class="container">
   <div class="top-bar">
-    <!-- more -->
-    <button class="top-bar__more">
+    <!-- More -->
+    <button
+      class="top-bar__more d-none d-lg-block js-toggle"
+      toggle-target="#navbar"
+    >
       <img
         src="./assets/icons/more.svg"
         alt=""
-        class="top-bar__more-icon icon"
+        class="icon top-bar__more-icon"
       />
     </button>
-    <!-- logo  -->
-    <a href="./" class="logo">
-      <img src="./assets/icons/logo.svg" alt="grocery mart" class="logo__img" />
-      <h1 class="logo__title">grocerymart</h1>
+
+    <!-- Logo -->
+    <a href="./" class="logo top-bar__logo">
+      <img
+        src="./assets/icons/logo.svg"
+        alt="grocerymart"
+        class="logo__img top-bar__logo-img"
+      />
+      <h1 class="logo__title top-bar__logo-title">grocerymart</h1>
     </a>
-    <!-- navbar  -->
-    <nav class="navbar">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar hide">
+      <button class="navbar__close-btn js-toggle" toggle-target="#navbar">
+        <img class="icon" src="./assets/icons/arrow-left.svg" alt="" />
+      </button>
+
+      <a href="./checkout.html" class="nav-btn d-none d-md-flex">
+        <img src="./assets/icons/buy.svg" alt="" class="nav-btn__icon icon" />
+        <span class="nav-btn__title">Cart</span>
+        <span class="nav-btn__qnt">3</span>
+      </a>
+
+      <a href="#!" class="nav-btn d-none d-md-flex">
+        <img src="./assets/icons/heart.svg" alt="" class="nav-btn__icon icon" />
+        <span class="nav-btn__title">Favorite</span>
+        <span class="nav-btn__qnt">3</span>
+      </a>
+
       <ul class="navbar__list js-dropdown-list">
         <li class="navbar__item">
           <a href="#!" class="navbar__link">
@@ -4664,37 +4689,14 @@
         </li>
       </ul>
     </nav>
-    <!-- actions -->
+    <div class="navbar__overlay js-toggle" toggle-target="#navbar"></div>
+
+    <!-- Actions -->
     <div class="top-act">
-      <div class="top-act__group top-act__group--single">
-        <button class="top-act__btn">
-          <img
-            src="./assets/icons/search.svg"
-            alt=""
-            class="top-act__icon icon"
-          />
-        </button>
-      </div>
-      <div class="top-act__group">
-        <button class="top-act__btn">
-          <img
-            src="./assets/icons/heart.svg"
-            alt=""
-            class="top-act__icon icon"
-          />
-          <span class="top-act__title">03</span>
-        </button>
-
-        <div class="top-act__separate"></div>
-
-        <button class="top-act__btn">
-          <img src="./assets/icons/buy.svg" alt="" class="top-act__icon icon" />
-          <span class="top-act__title">$65.77</span>
-        </button>
-      </div>
-      <div class="top-act__user">
-        <img src="./assets/img/avatar.jpg" alt="" class="top-act__avatar" />
-      </div>
+      <a href="./sign-in.html" class="btn btn--text d-md-none">Sign In</a>
+      <a href="./sign-up.html" class="top-act__sign-up btn btn--primary"
+        >Sign Up</a
+      >
     </div>
   </div>
 </div>
