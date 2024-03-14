@@ -21,13 +21,6 @@
     justify-content: space-between;
     padding: 16px 0;
   }
-
-  &__more {
-    display: none;
-    @include abstract.breakpoint(lg) {
-      display: block;
-    }
-  }
 }
 .navbar {
   margin-left: 129px;
@@ -35,22 +28,63 @@
     margin-left: 28px;
   }
   @include abstract.breakpoint(lg) {
+    position: fixed;
+    inset: 0 50% 0 0;
+    z-index: 10;
+    margin-left: 0;
+    padding: 20px 0;
+    background: #fff;
+    translate: -100%;
+    transition: translate 0.5s;
+    &.show {
+      translate: 0;
+    }
+    &.show ~ &__overlay {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &__close-btn {
     display: none;
+    @include abstract.breakpoint(lg) {
+      display: block;
+      padding: 10px 40px;
+    }
+  }
+  &__overlay {
+    visibility: hidden;
+    opacity: 0;
+
+    transition: opacity visibility;
+    transition-duration: 0.5s;
+    @include abstract.breakpoint(lg) {
+      position: fixed;
+      inset: 0;
+      z-index: 9;
+      background: rgba($color: #000000, $alpha: 0.4);
+    }
   }
   &__list {
-    display: flex;
-    align-items: center;
+    @extend %flexItemsCenter;
+    @include abstract.breakpoint(lg) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     // gap: 30px;
   }
   &__item {
-    // &:first-child a {
-    //   padding-left: 0;
-    // }
     // &:last-child a {
     //   padding-right: 0;
     // }
     &:hover .dropdown {
       display: block;
+    }
+    @include abstract.breakpoint(lg) {
+      &:hover .dropdown {
+        display: none;
+      }
+
+      width: 100%;
     }
   }
   &__link {
@@ -61,6 +95,12 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 146.667%;
+    @include abstract.breakpoint(lg) {
+      justify-content: space-between;
+      padding: 10px 40px;
+      font-size: 1.6rem;
+      line-height: 150%;
+    }
   }
 }
 
@@ -80,10 +120,6 @@
     border-radius: 8px;
     background: var(--top-act-group-bg-color);
     box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow-color);
-
-    @include abstract.breakpoint(md) {
-      display: none;
-    }
   }
   &__group--single {
     @include abstract.breakpoint(lg) {
