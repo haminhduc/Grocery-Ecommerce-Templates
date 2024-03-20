@@ -33,22 +33,30 @@
     z-index: 10;
     margin-left: 0;
     padding: 20px 0;
-    background: #fff;
+    border-radius: 0 20px 20px 0;
+    background: var(--sidebar-bg);
     translate: -100%;
     transition: translate 0.5s;
     &.show {
       translate: 0;
+      box-shadow: var(--sidebar-shadow);
     }
     &.show ~ &__overlay {
       visibility: visible;
       opacity: 1;
     }
   }
+  @include abstract.breakpoint(sm) {
+    inset: 0 20% 0 0;
+  }
   &__close-btn {
     display: none;
     @include abstract.breakpoint(lg) {
       display: block;
       padding: 10px 40px;
+    }
+    @include abstract.breakpoint(sm) {
+      padding: 0 20px 10px;
     }
   }
   &__overlay {
@@ -70,8 +78,9 @@
       flex-direction: column;
       align-items: flex-start;
 
-      height: calc(100% - 26px);
+      height: calc(100% - 140px);
       overflow-y: auto;
+      overscroll-behavior: contain;
     }
     // gap: 30px;
   }
@@ -84,22 +93,44 @@
     }
     @include abstract.breakpoint(lg) {
       width: 100%;
+
+      &:hover .dropdown {
+        display: none;
+      }
+      &--active .dropdown {
+        display: block !important;
+      }
     }
   }
   &__link {
-    display: flex;
+    @extend %flexItemsCenter;
+
     gap: 6px;
-    // height: 50px;
+    height: 50px;
     padding: 0 15px;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 146.667%;
     @include abstract.breakpoint(lg) {
       justify-content: space-between;
-      padding: 10px 40px;
+      padding: 0 40px;
       font-size: 1.6rem;
       line-height: 150%;
     }
+    @include abstract.breakpoint(sm) {
+      height: 44px;
+      padding: 0 20px;
+    }
+  }
+  &__arrow {
+    margin-top: 3px;
+    @include abstract.breakpoint(lg) {
+      rotate: -90deg;
+      transition: rotate 0.3s;
+    }
+  }
+  &__item--active &__arrow {
+    rotate: 0deg;
   }
 }
 
@@ -152,5 +183,27 @@
     height: 50px;
     border-radius: 8px;
     cursor: pointer;
+  }
+}
+.navbar-btn {
+  height: 50px;
+  align-items: center;
+  padding: 0 40px;
+  @include abstract.breakpoint(sm) {
+    height: 44px;
+    padding: 0 20px;
+  }
+  &__title {
+    margin-left: 16px;
+  }
+
+  &__qnt {
+    margin-left: auto;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 146.667%;
   }
 }
