@@ -6,7 +6,7 @@
 
 .header {
   background-color: var(--header-bg-color);
-  @include abstract.breakpoint(lg) {
+  @include abstract.screen(lg) {
     box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
   }
 }
@@ -15,20 +15,20 @@
   position: relative;
   z-index: 1;
   padding: 30px 0;
-  @include abstract.breakpoint(lg) {
+  @include abstract.screen(lg) {
     padding: 20px 0;
   }
-  @include abstract.breakpoint(md) {
+  @include abstract.screen(md) {
     justify-content: space-between;
     padding: 16px 0;
   }
 }
 .navbar {
   margin-left: 129px;
-  @include abstract.breakpoint(xl) {
+  @include abstract.screen(xl) {
     margin-left: 28px;
   }
-  @include abstract.breakpoint(lg) {
+  @include abstract.screen(lg) {
     position: fixed;
     inset: 0 50% 0 0;
     z-index: 10;
@@ -47,16 +47,16 @@
       opacity: 1;
     }
   }
-  @include abstract.breakpoint(sm) {
+  @include abstract.screen(sm) {
     inset: 0 20% 0 0;
   }
   &__close-btn {
     display: none;
-    @include abstract.breakpoint(lg) {
+    @include abstract.screen(lg) {
       display: block;
       padding: 10px 40px;
     }
-    @include abstract.breakpoint(sm) {
+    @include abstract.screen(sm) {
       padding: 0 20px 10px;
     }
   }
@@ -66,7 +66,7 @@
 
     transition: opacity visibility;
     transition-duration: 0.5s;
-    @include abstract.breakpoint(lg) {
+    @include abstract.screen(lg) {
       position: fixed;
       inset: 0;
       z-index: 9;
@@ -75,7 +75,7 @@
   }
   &__list {
     @extend %flexItemsCenter;
-    @include abstract.breakpoint(lg) {
+    @include abstract.screen(lg) {
       flex-direction: column;
       align-items: flex-start;
 
@@ -92,7 +92,7 @@
     &:hover .dropdown {
       display: block;
     }
-    @include abstract.breakpoint(lg) {
+    @include abstract.screen(lg) {
       width: 100%;
 
       &:hover .dropdown {
@@ -112,20 +112,20 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 146.667%;
-    @include abstract.breakpoint(lg) {
+    @include abstract.screen(lg) {
       justify-content: space-between;
       padding: 0 40px;
       font-size: 1.6rem;
       line-height: 150%;
     }
-    @include abstract.breakpoint(sm) {
+    @include abstract.screen(sm) {
       height: 44px;
       padding: 0 20px;
     }
   }
   &__arrow {
     margin-top: 3px;
-    @include abstract.breakpoint(lg) {
+    @include abstract.screen(lg) {
       rotate: -90deg;
       transition: rotate 0.3s;
     }
@@ -139,7 +139,7 @@
   @extend %flexItemsCenter;
   gap: 20px;
   margin-left: auto;
-  @include abstract.breakpoint(md) {
+  @include abstract.screen(md) {
     margin-left: 0;
   }
   &__group {
@@ -153,7 +153,7 @@
     box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow-color);
   }
   &__group--single {
-    @include abstract.breakpoint(lg) {
+    @include abstract.screen(lg) {
       display: none;
     }
   }
@@ -190,7 +190,7 @@
   height: 50px;
   align-items: center;
   padding: 0 40px;
-  @include abstract.breakpoint(sm) {
+  @include abstract.screen(sm) {
     height: 44px;
     padding: 0 20px;
   }
