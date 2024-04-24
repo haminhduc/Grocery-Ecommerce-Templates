@@ -15,8 +15,6 @@
     line-height: 141.667%;
   }
   &__cate {
-    margin-top: 20px;
-
     --grid-gutter-x: 51px;
     @include abstract.screen(lg) {
       --grid-gutter-x: 24px;
