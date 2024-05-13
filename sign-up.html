@@ -90,13 +90,20 @@
                   id=""
                   placeholder="Email"
                   class="form__input"
+                  required
                 />
                 <img
                   src="./assets/icons/message.svg"
                   alt=""
                   class="form__input-icon"
                 />
+                <img
+                  src="./assets/icons/form-error.svg"
+                  alt=""
+                  class="form__input-icon-error"
+                />
               </div>
+              <p class="form__error">Invalid email</p>
             </div>
             <div class="form__group">
               <div class="form__text-input">
@@ -106,13 +113,23 @@
                   id=""
                   placeholder="Password"
                   class="form__input"
+                  minlength="6"
+                  required
                 />
                 <img
                   src="./assets/icons/lock.svg"
                   alt=""
                   class="form__input-icon"
                 />
+                <img
+                  src="./assets/icons/form-error.svg"
+                  alt=""
+                  class="form__input-icon-error"
+                />
               </div>
+              <p class="form__error">
+                Password must have at least 6 Characters
+              </p>
             </div>
             <div class="form__group">
               <div class="form__text-input">
@@ -122,21 +139,32 @@
                   id=""
                   placeholder="Confirm Password"
                   class="form__input"
+                  required
+                  minlength="6"
                 />
                 <img
                   src="./assets/icons/lock.svg"
                   alt=""
                   class="form__input-icon"
                 />
+                <img
+                  src="./assets/icons/form-error.svg"
+                  alt=""
+                  class="form__input-icon-error"
+                />
               </div>
+              <p class="form__error">
+                Confirm password does not match requirements
+              </p>
             </div>
             <div class="form__group form__group--inline">
-              <label for="" class="form__checkbox">
+              <label class="form__checkbox">
                 <input
                   type="checkbox"
                   name=""
                   id=""
                   class="form__checkbox-input"
+                  hidden
                 />
                 <span class="form__checkbox-label">Set as default card</span>
               </label>
@@ -145,16 +173,20 @@
               >
             </div>
             <div class="form__group auth__btn-group">
-              <button class="btn btn--primary auth__btn">Sign up</button>
+              <button class="btn btn--primary auth__btn form__submit-btn">
+                Sign up
+              </button>
               <button class="btn btn--outline auth__btn btn--no-margin">
                 <img src="./assets/icons/google.svg" alt="" class="btn__icon" />
-                Sign in with Gmail
+                Sign in with Google
               </button>
             </div>
           </form>
           <p class="auth__text">
             You have an account yet?
-            <a href="./sign-in.html" class="auth__link">Sign In</a>
+            <a href="./sign-in.html" class="auth__link auth__text-link"
+              >Sign In</a
+            >
           </p>
         </div>
       </div>

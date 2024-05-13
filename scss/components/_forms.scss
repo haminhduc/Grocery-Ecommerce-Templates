@@ -1,10 +1,33 @@
+@use "../abstract";
+
+$error-color: #ed4337;
+
 .form {
+  &:has(:invalid) &__submit-btn {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
   &__group {
     margin-top: 30px;
 
     &--inline {
       display: flex;
       align-items: center;
+    }
+  }
+
+  &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
+    .form__text-input {
+      border-color: $error-color;
+      background: rgba($color: $error-color, $alpha: 0.1);
+    }
+    .form__error,
+    .form__input-icon-error {
+      display: block;
+    }
+    .form__input-icon {
+      display: none;
     }
   }
 
@@ -19,6 +42,10 @@
 
     &:focus-within {
       border-color: #77dae6;
+    }
+
+    @include abstract.screen(md) {
+      height: 48px;
     }
   }
 
@@ -39,20 +66,78 @@
     }
   }
 
+  @include abstract.screen(md) {
+    font-size: 1.6rem;
+  }
+
+  &__error {
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 10px;
+    color: $error-color;
+    display: none;
+  }
+
+  &__input-icon-error {
+    display: none;
+    margin-left: 12px;
+    animation: shake 0.5s;
+  }
+
   &__pull-right {
     margin-left: auto;
   }
 
   &__checkbox {
+    position: relative;
+
     display: flex;
     align-items: center;
     gap: 10px;
 
+    user-select: none;
+
     &-label {
+      margin-left: 29px;
       color: #9e9da8;
       font-size: 1.5rem;
       font-weight: 500;
       line-height: 146.667%;
+
+      @include abstract.screen(md) {
+        font-size: 1.4rem;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 3px;
+    }
+    &::before {
+      width: 19px;
+      height: 19px;
+      border-radius: 5px;
+      border: 2px solid #9e9da8;
+    }
+  }
+
+  &__checkbox:has(:checked) {
+    &::before {
+      border-color: #ffb700;
+      background-color: #ffb700;
+    }
+
+    &::after {
+      width: 13px;
+      height: 8px;
+      border: 2.7px solid;
+      border-color: transparent transparent #fff #fff;
+      rotate: -45deg;
+      left: 3.5px;
+      top: 3px;
     }
   }
 }

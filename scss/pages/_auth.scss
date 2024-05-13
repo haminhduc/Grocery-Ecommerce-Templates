@@ -2,8 +2,11 @@
 
 .auth {
   display: flex;
-
+  min-height: -webkit-fill-available;
   min-height: 100vh;
+
+  @supports (-webkit-touch-callout: none) {
+  }
 
   &__intro,
   &__content {
@@ -38,6 +41,10 @@
       font-size: 1.8rem;
       font-weight: 500;
       line-height: 144.444%;
+
+      @include abstract.screen(md) {
+        font-size: 1.5rem;
+      }
     }
     &-next {
       bottom: 50px;
@@ -76,6 +83,10 @@
     font-size: 3rem;
     font-weight: 500;
     line-height: 146.66%;
+
+    @include abstract.screen(md) {
+      font-size: 2.2rem;
+    }
   }
 
   &__desc {
@@ -86,11 +97,19 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 146.667%;
+
+    @include abstract.screen(md) {
+      font-size: 1.4rem;
+    }
   }
 
   &__form {
     width: 100%;
     margin-top: 30px;
+
+    @include abstract.screen(md) {
+      margin-top: 0;
+    }
   }
 
   &__link {
@@ -98,6 +117,10 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2.2rem;
+
+    @include abstract.screen(md) {
+      font-size: 1.4rem;
+    }
   }
 
   &__btn-group {
@@ -116,5 +139,13 @@
     color: #9e9da8;
     font-size: 1.8rem;
     line-height: 144.444%;
+
+    @include abstract.screen(md) {
+      font-size: 1.6rem;
+    }
+
+    &-link {
+      font-size: inherit;
+    }
   }
 }
