@@ -1,1 +1,1 @@
-deloyhttps://main--grocery-ecommerce-templates.netlify.app/:
+deploy: https://main--grocery-ecommerce-templates.netlify.app/
