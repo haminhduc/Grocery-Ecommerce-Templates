@@ -20,6 +20,7 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+    background: var(--auth-intro-bg);
 
     &-logo,
     &-next {
@@ -41,6 +42,7 @@
       font-size: 1.8rem;
       font-weight: 500;
       line-height: 144.444%;
+      color: var(--auth-intro-text-color);
 
       @include abstract.screen(md) {
         font-size: 1.5rem;
@@ -75,6 +77,10 @@
       width: min(460px, 100%);
       margin: 0 auto;
       padding: 50px 0;
+
+      @include abstract.screen(md) {
+        padding: 32px 0;
+      }
     }
   }
 
@@ -83,8 +89,10 @@
     font-size: 3rem;
     font-weight: 500;
     line-height: 146.66%;
+    color: var(--auth-heading-color);
 
     @include abstract.screen(md) {
+      margin-top: 40px;
       font-size: 2.2rem;
     }
   }
