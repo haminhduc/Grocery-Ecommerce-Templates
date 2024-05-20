@@ -2662,6 +2662,19 @@ html {
   top: 3px;
 }
 
+.message {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: left;
+}
+.message--success {
+  border: 1.5px solid #46a05c;
+  background: rgba(39, 243, 117, 0.2);
+}
+
 .home__container {
   margin-top: 40px;
 }
@@ -2722,7 +2735,7 @@ html {
   top: 80px;
 }
 .auth__intro-img {
-  max-width: 100%;
+  width: min(424px, 100%);
 }
 .auth__intro-text {
   min-width: 412px;
@@ -2799,6 +2812,9 @@ html {
   width: 100%;
   margin-top: 30px;
 }
+.auth__form-forgot {
+  margin-top: 10px;
+}
 @media (max-width: 767.98px) {
   .auth__form {
     margin-top: 0;
@@ -2837,6 +2853,9 @@ html {
 }
 .auth__text-link {
   font-size: inherit;
+}
+.auth__message {
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
